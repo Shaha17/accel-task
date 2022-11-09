@@ -24,10 +24,11 @@ namespace LinkShortener
             var logger = scope.ServiceProvider.GetRequiredService<ILogger<Program>>();
             try
             {
-                IronBarCode.License.LicenseKey = "IRONBARCODE.GEVEDA1831.25743-36F85E31A3-QIAJL5A6I3YLGLKO-CWQOFB5BYTKO-6NARTBTHOGBI-PJ4AE7LAPY3E-IHN7KQYPBKZQ-CDM7JN-TMIRVHQKMPOIEA-DEPLOYMENT.TRIAL-AFML5H.TRIAL.EXPIRES.20.NOV.2022";
+                IronBarCode.License.LicenseKey =
+                    "IRONBARCODE.LLB36553.18121-11E6E59DC4-CW6EC3-IFVYUR4W6SZ5-2MYJS5QLEXFB-C6I2SYZ7IUCJ-AEAQQBYAAVLN-S7MZCZIJBS2Q-7LIWO3-TXDGQ5LNWYWIEA-DEPLOYMENT.TRIAL-H36TI3.TRIAL.EXPIRES.09.DEC.2022";
                 var context = services.GetRequiredService<AppDbContext>();
                 var webHostEnvironment = services.GetRequiredService<IWebHostEnvironment>();
-                
+
                 if (!Directory.Exists(webHostEnvironment.WebRootPath))
                 {
                     var dir = Directory.CreateDirectory(webHostEnvironment.WebRootPath);
@@ -47,7 +48,7 @@ namespace LinkShortener
             {
                 logger.LogError(ex.Message);
             }
-            
+
             await host.RunAsync();
         }
 
